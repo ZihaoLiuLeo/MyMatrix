@@ -20,8 +20,7 @@ matrix44 quaternion::toTransform() const {
 	float xx = v.x * v.x, yy = v.y * v.y, zz = v.z * v.z;
 	float xy = v.x * v.y, yz = v.y * v.z, xz = v.x * v.z;
 	float wx = w * v.x, wy = w * v.y, wz = w * v.z;
-	matrix44 ret;
-	InitMat(matrix44, ret, 4, float, 1);
+	matrix44 ret = identity<matrix44, 4>();
 	ret[0][0] = 1 - 2 * (yy + zz);
 	ret[0][1] = 2 * (xy - wz);
 	ret[0][2] = 2 * (xy + wy);
